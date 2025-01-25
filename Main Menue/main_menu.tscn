@@ -1,11 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://bigc17257j6qq"]
 
-[ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_jyjqj"]
-[ext_resource type="Texture2D" uid="uid://ptmoady1iu4i" path="res://Brown.png" id="1_n5s6o"]
-[ext_resource type="Texture2D" uid="uid://ltjrbly08h57" path="res://scenes/cooltext473853363711145.png" id="2_lbubq"]
+[ext_resource type="Script" path="res://Main Menue/main_menu.gd" id="1_gqwsi"]
+[ext_resource type="Texture2D" uid="uid://ptmoady1iu4i" path="res://backgrounds/Brown.png" id="2_lwgt6"]
+[ext_resource type="Texture2D" uid="uid://ltjrbly08h57" path="res://scenes/cooltext473853363711145.png" id="3_p1mbm"]
 
 [node name="MainMenu" type="Node"]
-script = ExtResource("1_jyjqj")
+script = ExtResource("1_gqwsi")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 texture_filter = 1
@@ -14,7 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_n5s6o")
+texture = ExtResource("2_lwgt6")
 stretch_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -27,7 +27,7 @@ offset_bottom = 141.0
 grow_horizontal = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-texture = ExtResource("2_lbubq")
+texture = ExtResource("3_p1mbm")
 
 [node name="Level1" type="Button" parent="."]
 anchors_preset = 8

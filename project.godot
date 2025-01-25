@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Neues Spiel"
-run/main_scene="res://scenes/main_menu.tscn"
+config/name="Slashing-Frog"
+run/main_scene="res://Main Menue/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
 
@@ -23,6 +23,10 @@ window/stretch/aspect="expand"
 [dotnet]
 
 project/assembly_name="Neues Spiel"
+
+[global_group]
+
+player=""
 
 [input]
 

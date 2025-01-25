@@ -41,9 +41,27 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	sprite_2d.flip_h = velocity.x < 0
-	
 	#Damage kriegen Function / sterben
 func take_damage(amount):
+	if is_on_floor() and abs(velocity.x) > 0.1:  # 10 ist ein Schwellenwert für die minimale Geschwindigkeit
+		apply_spike_knockback()
 	health -= amount
 	if health <= 0:
-		queue_free()
+		get_tree().change_scene_to_file("res://Main Menue/main_menu.tscn")
+
+func apply_knockback(knockback_force: Vector2, duration: float):
+	var tween = create_tween()
+	tween.tween_property(self, "velocity", Vector2.ZERO, duration).from(knockback_force)
+
+func apply_spike_knockback():
+	var knockback_strength_horizontal = 10
+	var knockback_strength_vertical = 400 # Negative Werte gehen nach oben
+	var knockback_duration = 0.5
+
+	var knockback_direction = Vector2(-sign(velocity.x), -1)  # Horizontale Richtung umkehren und nach oben
+	var knockback_force = Vector2(
+		knockback_direction.x * knockback_strength_horizontal,
+		knockback_direction.y * knockback_strength_vertical
+	)
+
+	apply_knockback(knockback_force, knockback_duration)
