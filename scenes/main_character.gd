@@ -41,7 +41,7 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	sprite_2d.flip_h = velocity.x < 0
-	#Damage kriegen Function / sterben
+	#Damage kriegen Function / sterben#
 func take_damage(amount):
 	if is_on_floor() and abs(velocity.x) > 0.1:  # 10 ist ein Schwellenwert für die minimale Geschwindigkeit
 		apply_spike_knockback()
