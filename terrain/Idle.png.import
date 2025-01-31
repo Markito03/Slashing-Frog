@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddfpl08ec6diu"
-path="res://.godot/imported/End (Pressed) (64x64).png-d626b7680c91eb556d7e94feb89eaddc.ctex"
+uid="uid://0dlvrtpe2c35"
+path="res://.godot/imported/Idle.png-62086505b117a0c3c1c0a3055e1a3b8a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/End (Pressed) (64x64).png"
-dest_files=["res://.godot/imported/End (Pressed) (64x64).png-d626b7680c91eb556d7e94feb89eaddc.ctex"]
+source_file="res://terrain/Idle.png"
+dest_files=["res://.godot/imported/Idle.png-62086505b117a0c3c1c0a3055e1a3b8a.ctex"]
 
 [params]
 

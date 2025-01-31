@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://cl6m1vnfvlaxg"]
+[gd_scene load_steps=46 format=3 uid="uid://cl6m1vnfvlaxg"]
 
 [ext_resource type="Script" path="res://scenes/main_character.gd" id="1_iyu7k"]
 [ext_resource type="Texture2D" uid="uid://da3klun2cx8cx" path="res://characters/Idle (32x32).png" id="2_m72dk"]
@@ -190,7 +190,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 20.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -213,7 +213,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"double_jump",
-"speed": 20.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -221,7 +221,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"fall",
-"speed": 20.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -229,7 +229,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"jump",
-"speed": 20.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -270,7 +270,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
-"speed": 20.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -290,29 +290,32 @@ animations = [{
 }],
 "loop": true,
 "name": &"wall_jump",
-"speed": 15.0
+"speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_31y61"]
+radius = 5.0
+height = 13.3333
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
-position = Vector2(146, 242)
 scale = Vector2(3, 3)
 script = ExtResource("1_iyu7k")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(2.5625, -1.83593)
-scale = Vector2(0.56901, 0.614421)
+position = Vector2(-8.9407e-08, 8.9407e-08)
+scale = Vector2(0.408854, 0.499675)
 sprite_frames = SubResource("SpriteFrames_5dlhw")
-animation = &"jump"
+animation = &"wall_jump"
 autoplay = "default"
 metadata/_edit_lock_ = true
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(3, 0.333333)
-scale = Vector2(0.333333, 0.333333)
-position_smoothing_enabled = true
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_31y61")
 metadata/_edit_lock_ = true
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-1.33333, 8, 7.33333, 8, 7.66667, -7, -1.33333, -7, -1.66667, 8)
+[node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2(0.333333, 0.333333)
+position_smoothing_enabled = true
 metadata/_edit_lock_ = true
