@@ -1,7 +1,7 @@
 extends Node
 
 #@export var damage_amount = 25
-@export var main_menu_scene: String = "res://main_menu.tscn"
+@export var main_menu_scene: String = "res://scenes/main_menu.tscn"
 
 func _ready():
 	connect("body_entered", Callable(self, "_on_body_entered"))

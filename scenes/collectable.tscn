@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://xtmr5hw2pa2v"]
 
-[ext_resource type="Script" path="res://scenes/collectable.gd" id="1_o6a4x"]
+[ext_resource type="Script" path="res://Scripts/collectable.gd" id="1_o6a4x"]
 [ext_resource type="Texture2D" uid="uid://blk3inqjv7mvr" path="res://terrain/Cherries.png" id="1_xww6a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cixtj"]
