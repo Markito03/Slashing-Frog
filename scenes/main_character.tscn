@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://cl6m1vnfvlaxg"]
+[gd_scene load_steps=46 format=3 uid="uid://cl6m1vnfvlaxg"]
 
 [ext_resource type="Script" path="res://Scripts/main_character.gd" id="1_iyu7k"]
 [ext_resource type="Texture2D" uid="uid://da3klun2cx8cx" path="res://characters/Frog/Idle (32x32).png" id="2_m72dk"]
@@ -293,6 +293,9 @@ animations = [{
 "speed": 15.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2282s"]
+size = Vector2(8, 14.3333)
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 position = Vector2(146, 242)
 scale = Vector2(3, 3)
@@ -303,7 +306,6 @@ texture_filter = 1
 position = Vector2(2.5625, -1.83593)
 scale = Vector2(0.56901, 0.614421)
 sprite_frames = SubResource("SpriteFrames_5dlhw")
-animation = &"jump"
 autoplay = "default"
 metadata/_edit_lock_ = true
 
@@ -313,6 +315,6 @@ scale = Vector2(0.333333, 0.333333)
 position_smoothing_enabled = true
 metadata/_edit_lock_ = true
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-1.33333, 8, 7.33333, 8, 7.66667, -7, -1.33333, -7, -1.66667, 8)
-metadata/_edit_lock_ = true
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.66667, 0.833328)
+shape = SubResource("RectangleShape2D_2282s")

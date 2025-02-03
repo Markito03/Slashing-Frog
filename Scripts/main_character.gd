@@ -9,7 +9,8 @@ const JUMP_VELOCITY = -800.0
 var  jump_count = 0
 var direction = 0
 var is_wall_sliding = false
-var friction = 100
+var friction = 50
+var can_wall_slide = true
 
 
 func animate():
@@ -64,13 +65,22 @@ func jump():
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		
+		
+		jump_count += 1
 func wall_slide():
-	if (is_on_wall()):
+	if (is_on_wall() and not is_on_floor() and Input.get_axis("left", "right")):
 		is_wall_sliding = true
 		velocity.y = friction
+		jump_count = 0
+		can_wall_slide = false
+		await get_tree().create_timer(1.0).timeout
+		can_wall_slide = true
 	else:
 		is_wall_sliding = false
-	
+	if Input.is_action_just_pressed("jump"):
+		is_wall_sliding = false
+		velocity.y = JUMP_VELOCITY
+		
 func run():
 	#Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
