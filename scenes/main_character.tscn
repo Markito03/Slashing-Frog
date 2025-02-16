@@ -296,7 +296,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2282s"]
 size = Vector2(8, 14.3333)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["player"]]
 position = Vector2(146, 242)
 scale = Vector2(3, 3)
 script = ExtResource("1_iyu7k")
@@ -307,7 +307,6 @@ position = Vector2(2.5625, -1.83593)
 scale = Vector2(0.56901, 0.614421)
 sprite_frames = SubResource("SpriteFrames_5dlhw")
 autoplay = "default"
-metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(3, 0.333333)
@@ -318,3 +317,16 @@ metadata/_edit_lock_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2.66667, 0.833328)
 shape = SubResource("RectangleShape2D_2282s")
+metadata/_edit_lock_ = true
+
+[node name="DashDurationTimer" type="Timer" parent="."]
+wait_time = 0.15
+
+[node name="DashEffectTimer" type="Timer" parent="."]
+wait_time = 0.07
+
+[node name="DashCoolDownTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="DashDurationTimer" to="." method="_on_dash_duration_timer_timeout"]
+[connection signal="timeout" from="DashEffectTimer" to="." method="_on_dash_effect_timer_timeout"]
+[connection signal="timeout" from="DashCoolDownTimer" to="." method="_on_dash_cool_down_timer_timeout"]
