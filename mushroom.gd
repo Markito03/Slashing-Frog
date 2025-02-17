@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
-const SPEED = 75.0
+@onready var animated_sprite = $AnimatedSprite2D
+const SPEED = 150.0
 
 var direction = 1
 var health = 1
@@ -12,7 +13,7 @@ func add_gravity(delta):
 
 func move_enemy():
 	velocity.x = SPEED * direction
-
+	animated_sprite.play("run")
 func platform_edge():
 	if not $RayCast2D.is_colliding():
 		direction = -direction
@@ -21,6 +22,11 @@ func platform_edge():
 func reverse_direction():
 	if is_on_wall():
 		direction = -direction
+		animated_sprite.flip_h = !animated_sprite.flip_h
+	
+	
+	
+	
 
 func _physics_process(delta: float) -> void:
 	add_gravity(delta)
